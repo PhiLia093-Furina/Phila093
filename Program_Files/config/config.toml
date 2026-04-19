@@ -1,0 +1,41 @@
+# 程序全局配置 - 注释友好，比ini更优雅
+
+Helps = """
+***************************************
+                  说明 
+***************************************
+
+  若电脑安装有米哈游启动器，程序默认添加
+  若没有米游启动器, 点击首个图标即可下载
+  其余需要手动点击右下 “+” 图标自行添加
+  添加软件需要纯英文路径以保证启动器稳定
+  “显示功能”可以显示角色PV的姓名与姓名的
+  对应关系，方便与 “查找” 功能结合使用
+
+***************************************
+"""
+
+[Path]
+
+edge_path = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" #电脑EDGE浏览器位置，可自己更改
+background_dir = "background/"  #主窗口的背景图片路径/可自己添加图片，最好16：9的尺寸
+win_pic_path = "picture/"  #小窗口轮播图片的存储位置
+start_rail_path = "Star Rail/" #星铁游戏角色的相关信息/不需要可注释
+pic_cache_path = "cache/pic/" #缓存添加的游戏图标的目录
+cache_path = "cache/"  #自动创建缓存的目录
+
+[File_Path]
+
+icon_file = "config/PhiLia093.ico"  #程序图标存储位置，可更爱
+pic_file = "config/default.png"  #添加程序未提取图标时默认图标的位置
+insert_file = "config/insert.png" #插入图标的按钮图案存储位置
+cache_file = "cache/cache.toml"  #第一次启动程序时添加的默认启动器缓存，未找到则为空，启动链接指向下载地址
+data_file = "cache/dict_ary.toml"  #用于存放应用程序的目标地址、默认图标地址、更改图标的位置以及当前图标的状态，1为默认图标
+web_file = "My_HTML/web.html"  #制作的网页地址
+
+[Window]  #默认窗口大小
+
+win_width = 949  
+win_height = 500
+
+
