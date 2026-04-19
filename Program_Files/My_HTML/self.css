@@ -1,0 +1,83 @@
+/* 给整个页面加个背景色 */
+body {
+    background: #699be6 ;
+    font-family: 'Segoe UI', sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;           /* 占满屏幕高度 */
+
+}
+
+.parent_win{
+    background: #699be6 url("pic/15.jpeg") no-repeat right top;
+    background-size: cover;
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto auto;
+    
+    gap: 40px;
+    width: 1600px;
+    height: 900px;
+    padding: 20px 20px;
+    border-radius: 15px;
+    place-items: center
+}
+/* 设计卡片样式 */
+.card {
+    background: #699be6;
+    background-size: cover;
+    width: 135px;
+    height: 193px;
+    padding: 30px;
+    border-radius: 15px;      /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 阴影 */
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.last1 {
+  /* 合并 4 列 → 让最后一行占满整行 */
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center; /* 居中 */
+  gap: 400px; /* 两个盒子间距 */
+}
+
+.last2 {
+    background: #699be6;
+    background-size: cover;
+    width: 135px;
+    height: 193px;
+    padding: 30px;
+    border-radius: 15px;      /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 阴影 */
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+/* 标题颜色 */
+h1 {
+    color: #2980e2;
+}
+
+/* 按钮样式 */
+button {
+    position: absolute;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* cursor: pointer; */
+    bottom: 20px;
+    left: 50%;       /* 水平居中 */
+    transform: translateX(-50%);
+    /* transition: background 0.3s; 动画过渡 */
+}
+
+/* 鼠标悬停在按钮上的效果 */
+button:hover {
+    background-color: #0056b3;
+}

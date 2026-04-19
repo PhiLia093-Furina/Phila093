@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_Web</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="self.css">
+</head>
+
+<body>
+    <div class = "parent_win">
+
+    </div>
+    <script>
+        var list = ["1", "2", "3", "4", "5", "6", 
+                    "7","8","9","10","11","12", "13", "14"]
+        var url =['https://www.bilibili.com/video/BV1ADFNe5EAG/',
+                'https://www.bilibili.com/video/BV16HPsezEgp/',
+                'https://www.bilibili.com/video/BV16FQwYGE8k/',
+                'https://www.bilibili.com/video/BV17YR2YuETG/',
+                'https://www.bilibili.com/video/BV1AbLezxEKM/',
+                'https://www.bilibili.com/video/BV1ZNEiz8ESM/',
+                'https://www.bilibili.com/video/BV14nTNzfEcU/',
+                'https://www.bilibili.com/video/BV1HfKiz3Ezf/',
+                'https://www.bilibili.com/video/BV1otbGzXE5K/',
+                'https://www.bilibili.com/video/BV1Hdh1zhE1e/',
+                'https://www.bilibili.com/video/BV1r5nwzVEBg/',
+                'https://www.bilibili.com/video/BV13KxrzDEE4/',
+                'https://www.bilibili.com/video/BV19RhAzcEdU/',
+                'https://www.bilibili.com/video/BV1yZ1MB1Eej/']
+
+        for (var i = 1; i <= 12; i++){
+            var img = i + ".png";
+            var name = list[i-1]
+            link = url[i-1]
+            var a = `
+                <div class="card" style = "background-image:url('pic/${img}')">
+                <!--<h1>${name}</h1>-->
+                <button onclick="goToUrl('${link}')">播放</button>
+                </div>`;
+            $(".parent_win").append(a);
+        }
+            
+            a = `<div class="last1">
+             <div class="last2" style = background-image:url("pic/13.png")>
+            <!-- a += '<h1>'+name+'</h1>';-->
+            <button onclick="goToUrl('${url[12]}')">播放</button>
+            </div>
+            <div class="last2" style = background-image:url("pic/13.png")>
+            <!--a += '<h1>'+name+'</h1>';-->
+            <button onclick="goToUrl('${url[13]}')">播放</button>
+            </div>
+            </div>
+`
+            $(".parent_win").append(a);
+
+        // 跳转函数 
+        function goToUrl(url){
+            // 当前页面跳转
+            // window.location.href = url;
+            // 如需 新标签页打开，替换上面这行为：
+            window.open(url);
+        }
+    </script>
+    
+    
+</body>
+
+</html>
