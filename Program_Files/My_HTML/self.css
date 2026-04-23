@@ -2,33 +2,73 @@
 body {
     background: #699be6 ;
     font-family: 'Segoe UI', sans-serif;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
     height: 100vh;           /* 占满屏幕高度 */
+    margin: 0
 
+}
+
+#left_side{
+    background: #fcfcfc ;
+    background-size: cover;
+    border: 1px solid #54cbf0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 139px;
+    height: 914px;
+    border-radius: 10px;
+
+    display: flex;           /* 弹性布局 */
+    flex-direction: column;   /* 从上到下排列 */
+    gap: 1px;                /* 按钮之间的间距 */
+    padding: 0px;            /* 按钮距离边栏的距离 */
+    box-sizing: border-box;
+}
+
+#right_side{
+    background: #699be6 no-repeat right top;
+    background-size: cover;
+    grid-template-columns: repeat(6, 1fr);
+    border: 1px solid #54cbf0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 139px;
+    height: 914px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;           /* 弹性布局 */
+    flex-direction: column;   /* 从上到下排列 */
+    gap: 1px;                /* 按钮之间的间距 */
+    padding: 0px;            /* 按钮距离边栏的距离 */
+    box-sizing: border-box;
 }
 
 .parent_win{
     background: #699be6 url("pic/15.jpeg") no-repeat right top;
     background-size: cover;
     display: grid;
-    display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto auto auto;
-    
-    gap: 40px;
+    gap: 30px;
     width: 1600px;
     height: 900px;
-    padding: 20px 20px;
-    border-radius: 15px;
-    place-items: center
+    padding: 8px 8px;
+    border-radius: 10px;
+    place-items: center;
 }
 /* 设计卡片样式 */
 .card {
-    background: #699be6;
+    /* background: #699be6; */
     background-size: cover;
     width: 135px;
-    height: 193px;
+    height: 190px;
     padding: 30px;
     border-radius: 15px;      /* 圆角 */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 阴影 */
@@ -40,13 +80,14 @@ body {
 .last1 {
   /* 合并 4 列 → 让最后一行占满整行 */
   grid-column: 1 / -1;
+  grid-row: 1 / -1;
   display: flex;
   justify-content: center; /* 居中 */
   gap: 400px; /* 两个盒子间距 */
 }
 
 .last2 {
-    background: #699be6;
+    /* background: #699be6; */
     background-size: cover;
     width: 135px;
     height: 193px;
@@ -57,27 +98,133 @@ body {
     position: relative;
     padding-bottom: 50px;
 }
-/* 标题颜色 */
-h1 {
-    color: #2980e2;
-}
 
 /* 按钮样式 */
-button {
+.buttons {
     position: absolute;
     background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    /* cursor: pointer; */
+    cursor: pointer;
     bottom: 20px;
     left: 50%;       /* 水平居中 */
     transform: translateX(-50%);
-    /* transition: background 0.3s; 动画过渡 */
+    transition: background 0.3s;
+}
+/* 鼠标悬停在按钮上的效果 */
+.buttons:hover {
+    background-color: #0056b3;
 }
 
-/* 鼠标悬停在按钮上的效果 */
-button:hover {
+.side_button{
+    /* position: fixed; */
+    background-color: #1f80e7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.side_button:hover {
     background-color: #0056b3;
+}
+
+
+.Home{
+    position: absolute;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: flex;
+    justify-content: center; /* 居中 */
+    gap: 40px; /* 两个盒子间距 */
+    flex-direction: column;   /* 从上到下排列 */
+    gap: 180px;                /* 按钮之间的间距 */
+    padding: 0px;  
+    top: 100px;          /* 按钮距离边栏的距离 */
+    box-sizing: border-box;
+}
+
+.home_title{
+    color: #fcfcfc;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    font-size:7ch;
+
+}
+
+.search_box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 15px;
+  position: relative;
+}
+
+/* 输入框 */
+#search_input {
+  flex: 1;
+  padding: 10px 30px;
+  border: 1px solid #54cbf0;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  background: #fff;
+}
+
+#search_input:focus {
+  border-color: #007bff;
+}
+
+/* 搜索按钮 */
+.search_btn {
+  padding: 10px 18px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search_btn:hover {
+  background: #0056b3;
+}
+
+
+.ys{
+    position: absolute;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: flex;
+    justify-content: center; /* 居中 */
+    gap: 40px; /* 两个盒子间距 */
+    flex-direction: column;   /* 从上到下排列 */
+    gap: 180px;                /* 按钮之间的间距 */
+    padding: 0px;  
+    bottom: 80px;          /* 按钮距离边栏的距离 */
+    box-sizing: border-box;
+}
+
+.ys_box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 15px;
+  position: relative;
+}
+
+.ys_btn {
+  padding: 20px 40px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.ys_btn:hover {
+  background: #0056b3;
 }
