@@ -37,7 +37,6 @@ $(function () {
 
 function home(){
     $(".parent_win").empty(); // 清空
-
     // 填入你想显示的新内容
     var homeHtml = `
         <div class="Home">
@@ -53,6 +52,17 @@ function home(){
 
     $(".parent_win").html(homeHtml);
     blind()
+}
+
+function search(){
+    let txt = document.getElementById("search_input").value.trim();
+    // console.log(txt);
+    if (!txt) {
+        return;
+    }
+    let url = 'https://cn.bing.com/search?q=' + encodeURIComponent(txt);
+    console.log(url);
+    goToUrl(url);
 }
 
 function loadCard_Genshin(){
@@ -97,6 +107,15 @@ function loadCard_HK(){
         $(".parent_win").append(a);
         blind()
 }
+
+function goToGithub(args){
+    if (args == "Start"){
+        goToUrl('https://github.com/PhiLia093-Furina/Game_Start')
+    }
+    if (args == "Game"){
+        goToUrl('https://github.com/PhiLia093-Furina/My-game')
+    }
+}
 // 跳转函数 
 function goToUrl(url){
     // 当前页面跳转
@@ -105,13 +124,6 @@ function goToUrl(url){
     window.open(url);
 }
 
-function search(){
-    let txt = document.getElementById("search_input").value.trim();
-    // console.log(txt);
-    if (!txt) {
-        return;
-    }
-    let url = 'https://cn.bing.com/search?q=' + encodeURIComponent(txt);
-    console.log(url);
-    goToUrl(url);
-}
+
+
+
