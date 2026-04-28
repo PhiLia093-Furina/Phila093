@@ -20,20 +20,43 @@ var chrome = ["https://bing.com/search?q=",
               "https://www.sogou.com/web?query="
 ];
 
+let collect_list=[]
 
 function blind(){
-        $('#search_input').on('keydown', function (e) {
-        // 13 是回车键的编号
-            if (e.keyCode === 13) {
-                search(); // 直接调用你现有的搜索函数
-            }
-        });
-}
 
-$(function () {
-        home();
-        blind()
+    $('#search_input').on('keydown', function (e) {
+    // 13 是回车键的编号
+        if (e.keyCode === 13) {
+            search(); // 直接调用你现有的搜索函数
+        }
     });
+
+    $("#right_side").on("contextmenu", ".collect_item", function(e){
+    e.preventDefault();
+    let name = $(this).text().trim();
+    collect_list = collect_list.filter(item => item.name !== name);
+    // 保存到本地
+    localStorage.setItem("collects", JSON.stringify(collect_list));
+    // 右键 → 删除当前这条收藏
+    $(this).remove();
+    });
+}
+$(function () {
+    home();
+    blind()
+    // 从本地读取
+    let data = localStorage.getItem("collects");
+    if (data) {
+        collect_list = JSON.parse(data); // 转为数组
+
+        // 循环渲染到页面
+        collect_list.forEach(item => {
+            $("#right_side").prepend(`
+                <button class="side_button collect_item" onclick="goToUrl('${item.link}')">${item.name}</button>
+            `);
+        });
+    }
+});
 
 function home(){
     $(".parent_win").empty(); // 清空
@@ -106,6 +129,47 @@ function loadCard_HK(){
         </div>`;
         $(".parent_win").append(a);
         blind()
+}
+
+function insert_collection(){
+    if ($(".parent_win .insert_pop").length > 0) 
+        return;
+
+    $(".parent_win").append(`
+        <div class="insert_pop">
+            <input type="text" id="web_input" placeholder="输入网址..." />
+            <input type="text" id="name_input" placeholder="输入名称..." />
+            <button class="certern_btn" onclick="save_link()">确定</button>
+            <button class="certern_btn" onclick="closeInsertPop()">取消</button>
+        </div>
+    `);
+
+}
+
+function closeInsertPop(){
+    $(".insert_pop").remove();
+}
+
+function save_link(){
+
+    let link = document.getElementById("web_input").value.trim();
+    let name = document.getElementById("name_input").value.trim();
+    
+    if (!link || !name){
+
+        return 0;
+    }
+    $(".insert_pop").remove()
+    var a = `
+            <button class="side_button collect_item" onclick="goToUrl('${link}')">${name}
+            </button>` 
+
+    $("#right_side").prepend(a);
+    collect_list.push({
+        name: name,
+        link: link
+    });
+    localStorage.setItem("collects", JSON.stringify(collect_list));
 }
 
 function goToGithub(args){

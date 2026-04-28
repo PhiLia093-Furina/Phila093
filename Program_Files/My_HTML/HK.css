@@ -1,0 +1,54 @@
+/* 设计卡片样式 */
+.card {
+    /* background: #699be6; */
+    background-size: cover;
+    width: 135px;
+    height: 190px;
+    padding: 30px;
+    border-radius: 15px;      /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 阴影 */
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.last1 {
+  /* 合并 4 列 → 让最后一行占满整行 */
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center; /* 居中 */
+  gap: 400px; /* 两个盒子间距 */
+}
+
+.last2 {
+    /* background: #699be6; */
+    background-size: cover;
+    width: 135px;
+    height: 193px;
+    padding: 30px;
+    border-radius: 15px;      /* 圆角 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 阴影 */
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+/* 按钮样式 */
+.buttons {
+    position: absolute;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    bottom: 20px;
+    left: 50%;       /* 水平居中 */
+    transform: translateX(-50%);
+    transition: background 0.3s;
+}
+/* 鼠标悬停在按钮上的效果 */
+.buttons:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,82 @@
+/* 给整个页面加个背景色 */
+body {
+    background: #699be6 ;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    height: 100vh;           /* 占满屏幕高度 */
+    margin: 0
+
+}
+
+.parent_win{
+  position: relative;
+    background: #699be6 url("pic/15.jpeg") no-repeat right top;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 30px;
+    width: 1600px;
+    height: 900px;
+    padding: 8px 8px;
+    border-radius: 10px;
+    place-items: center;
+}
+
+#left_side{
+    background: #fcfcfc ;
+    background-size: cover;
+    border: 1px solid #54cbf0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 144px;
+    height: 914px;
+    border-radius: 10px;
+
+    display: flex;           /* 弹性布局 */
+    flex-direction: column;   /* 从上到下排列 */
+    gap: 1px;                /* 按钮之间的间距 */
+    padding: 0px;            /* 按钮距离边栏的距离 */
+    box-sizing: border-box;
+}
+
+#right_side{
+    background: #699be6 no-repeat right top;
+    background-size: cover;
+    border: 1px solid #54cbf0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 137px;
+    height: 914px;
+    border-radius: 10px;
+
+    display: flex;          /* 弹性布局 */
+    flex-direction: column;   /* 从上到下排列 */
+    gap: 1px;                /* 按钮之间的间距 */
+    padding: 0px;            /* 按钮距离边栏的距离 */
+    box-sizing: border-box;
+}
+
+.side_button{
+    /* position: fixed; */
+    background-color: #1f80e7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.side_button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+

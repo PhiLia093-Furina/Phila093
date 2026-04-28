@@ -1,0 +1,61 @@
+.insert_pop {
+    position: absolute;
+    background: #fcfcfc ;
+    background-size: cover;
+    border: 2px solid #54cbf0;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+
+    display: flex;
+    justify-content: center; /* 居中 */
+    gap: 10px; /* 两个盒子间距 */
+    flex-direction: column;   /* 从上到下排列 */
+    padding: 20px;  
+    top: 190px;          /* 按钮距离边栏的距离 */
+    box-sizing: border-box;
+    z-index: 999
+}
+
+/* 输入框 */
+#web_input {
+  flex: 1;
+  padding: 10px 30px;
+  border: 1px solid #54cbf0;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  background: #fff;
+}
+
+#web_input:focus {
+  border-color: #007bff;
+}
+
+/* 输入框 */
+#name_input {
+  flex: 1;
+  padding: 10px 30px;
+  border: 1px solid #54cbf0;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  background: #fff;
+}
+
+#name_input:focus {
+  border-color: #007bff;
+}
+
+/* 搜索按钮 */
+.certern_btn {
+  padding: 10px 18px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.certern_btn:hover {
+  background: #0056b3;
+}
